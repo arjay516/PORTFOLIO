@@ -7,34 +7,73 @@
 }
 
 body {
+    margin: 0;
+    padding: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    flex-direction: column;
     background-color: #1f242d;
     font-family: "Poppins", sans-serif;
     color: white;
+    min-height: 100vh;
+    min-width: 100vw;
 }
 
+
 .header {
+    position: static;
     display: flex;
     justify-content: space-between;
-    padding: 25px 10%;
+    padding: 0px 10%;
+    background-color: #1f242d;
 }
+
 .logo {
-    color: #fff;
+    color: #0ef;
     text-decoration: none;
     font-weight: 600;
-    font-size: 50px;
+    font-size: 60px;
     cursor: default;
+    animation: logo 1s ease forwards;
+    opacity: 0;
+    margin-right: 50%;
+    margin-left: 10%;
+    margin-bottom: -1;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1f242d;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0px 0;
 }
 
 .navbar a {
+    display: inline-block;
     text-decoration: none;
     color: #fff;
     padding: 0px 16px;
     font-weight: 600;
     transition: 0.3s all;
+    animation: navMenu 1s ease forwards;
+    animation-delay: calc(0.2s * var(--i));
+    opacity: 0;
 }
 
 .navbar a:hover {
     color: #0ef;
+}
+
+.home {
+    position: relative;
+    min-height: 100vh;
+    min-width: 100vw;
 }
 
 .container {
@@ -42,32 +81,58 @@ body {
     padding: 25px 10%;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    left: 50px;
+    top: 10%;
 }
 
-.info-side h3 {
-    font-size: 30px;
-    font-weight: 700;
-    margin: 10px 0;
-    letter-spacing: 1px;
-}
-
-.info-side h1 {
-    font-size: 75px;
-    letter-spacing: 1px;
-    font-weight: 700;
+.info-side {
+    position: absolute;
+    width: 400%;
+    top: 250%;
+    left: 35%;
 }
 
 .info-side h3 span {
     color: #0ef;
 }
 
-p{
+.itsme {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 10px 0;
+    letter-spacing: 1px;
+    animation: itsme 1s ease forwards;
+    opacity: 0;
+}
+
+.ruel {
+    font-size: 75px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    animation: ruel 1s ease forwards;
+    
+}
+
+.webdev {
+    animation: webdev 1s ease forwards;
+    opacity: 0;
+}
+
+p {
     line-height: 27px;
     margin: 20px 0px 40px 0px;
+    animation: description 1s ease forwards;
+    opacity: 0;
 }
 
 .my-pic img {
-    width: 450px;
+    position: absolute;
+    width: 700px;
+    left: 300%;
+    border-radius: 50%;
+    border: 10px solid #0ef;
+    z-index: -1;
 }
 
 i {
@@ -80,11 +145,11 @@ i {
     transition: 0.3ms;
 }
 
-i:hover{
+i:hover {
     box-shadow: 0 0 20px #0ef;
 }
 
-button {
+.download {
     background-color: #0ef;
     margin-top: 50px;
     padding: 20px 70px;
@@ -96,6 +161,72 @@ button {
     box-shadow: 0 0 15px #0ef;
 }
 
-button:hover {
+.download:hover {
     box-shadow: none;
+}
+
+@keyframes logo {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes navMenu {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes itsme {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes webdev {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes ruel {
+    0% {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes description {
+    0% {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
